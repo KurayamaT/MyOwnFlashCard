@@ -96,7 +96,7 @@ class WordListActivity : AppCompatActivity(), AdapterView.OnItemClickListener, A
 
     override fun onItemLongClick(parent: AdapterView<*>?, view: View?, p2: Int, id: Long): Boolean {
 
-        var selectedDB = results[p2]
+        val selectedDB = results[p2]
         realm.beginTransaction()
         selectedDB!!.deleteFromRealm()
         realm.commitTransaction()
