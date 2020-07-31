@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
         var timer: Timer = Timer()
 
     //      click process of button
-    //    Todo「単語を編集」ボタンを押した場合
-    //    Todo 単語一覧画面(WordListActivity)へ
+    //    「単語を編集」ボタンを押した場合
+    //    単語一覧画面(WordListActivity)へ
         buttonEdit.setOnClickListener {
             val intent = Intent(this@MainActivity, WordListActivity::class.java)
             startActivity(intent)
         }
-    //    Todo「色」ボタンを押した場合
-    //    Todo 画面の背景色をボタンの色に設定
+    //    「色」ボタンを押した場合
+    //    画面の背景色をボタンの色に設定
 
         buttonColor01.setOnClickListener {
             intBackGroundColor = R.color.color01

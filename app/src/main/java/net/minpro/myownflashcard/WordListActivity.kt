@@ -118,7 +118,7 @@ class WordListActivity : AppCompatActivity(), AdapterView.OnItemClickListener, A
         val selectedDB = results[p2]
         val dialog = AlertDialog.Builder(this@WordListActivity).apply {
             setTitle(selectedDB!!.strAnswer + "の削除")
-            setMessage("削除しちゃうぞ。本当にいいのか。")
+            setMessage("本当に削除いいのかぁ")
             setPositiveButton("Yes!"){dialogInterface, i ->
                 realm.beginTransaction()
                 selectedDB!!.deleteFromRealm()
