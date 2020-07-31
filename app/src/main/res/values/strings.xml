@@ -22,6 +22,7 @@
 
     <string name="db_field_question">strQuestion</string>
     <string name="db_field_answer">strAnswer</string>
+    <string name="db_field_memory_flag">boolMemory</string>
 
     <string name="radio_button_01">暗記済みの単語を除外します</string>
     <string name="radio_button_02">暗記済みの単語も含みます</string>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import io.realm.Realm
 import io.realm.RealmResults
@@ -38,6 +39,24 @@ class WordListActivity : AppCompatActivity(), AdapterView.OnItemClickListener, A
         buttonBuck.setOnClickListener {
             finish()
         }
+
+        buttonSort.setOnClickListener {
+            results = realm.where<WordDB>(WordDB::class.java).findAll().sort(getString(R.string.db_field_memory_flag))
+            wordList.clear()
+            results.forEach {
+                if(it.boolMemoryFrag) {
+                    wordList.add(it.strAnswer + " : " + it.strQuestion + " 【暗記済】 ")
+                }else{
+                    wordList.add(it.strAnswer + " : " + it.strQuestion)
+                }
+            }
+
+            listView.adapter = adapter
+
+        }
+
+
+
         listView.onItemClickListener = this
         listView.onItemLongClickListener = this
     }
@@ -97,11 +116,22 @@ class WordListActivity : AppCompatActivity(), AdapterView.OnItemClickListener, A
     override fun onItemLongClick(parent: AdapterView<*>?, view: View?, p2: Int, id: Long): Boolean {
 
         val selectedDB = results[p2]
-        realm.beginTransaction()
-        selectedDB!!.deleteFromRealm()
-        realm.commitTransaction()
-        wordList.removeAt(p2)
-        listView.adapter = adapter
+        val dialog = AlertDialog.Builder(this@WordListActivity).apply {
+            setTitle(selectedDB!!.strAnswer + "の削除")
+            setMessage("削除しちゃうぞ。本当にいいのか。")
+            setPositiveButton("Yes!"){dialogInterface, i ->
+                realm.beginTransaction()
+                selectedDB!!.deleteFromRealm()
+                realm.commitTransaction()
+                wordList.removeAt(p2)
+                listView.adapter = adapter
+            }
+            setNegativeButton("No!"){dialogInterface, i ->
+                show()
+            }
+        }
+
+
 
         return true
 

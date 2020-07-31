@@ -103,9 +103,9 @@ class EditActivity : AppCompatActivity() {
         //1.入力した問題・こたえをDBに登録
 
         realm.beginTransaction()
-        val wordDB=realm.createObject(WordDB::class.java)
-        wordDB.strQuestion = editTextQuestion.text.toString()
+        val wordDB = realm.createObject(WordDB::class.java,editTextQuestion.text.toString())
         wordDB.strAnswer = editTextAnswer.text.toString()
+        wordDB.boolMemoryFrag = false
         realm.commitTransaction()
 
         finish()
