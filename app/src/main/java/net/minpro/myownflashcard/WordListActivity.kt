@@ -54,7 +54,7 @@ class WordListActivity : AppCompatActivity(), AdapterView.OnItemClickListener, A
             listView.adapter = adapter
 
         }
-
+//ほほほほ
 
 
         listView.onItemClickListener = this
