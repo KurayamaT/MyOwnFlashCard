@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutTest"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -45,7 +46,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageFlashQuestion"
+        android:id="@+id/imageViewFlashQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
@@ -56,44 +57,44 @@
         app:srcCompat="@drawable/image_flash_question" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textViewFlashQuestion"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="100dp"
         android:gravity="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageFlashQuestion"
-        app:layout_constraintEnd_toEndOf="@+id/imageFlashQuestion"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewFlashQuestion"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewFlashQuestion"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageFlashQuestion"
-        app:layout_constraintTop_toTopOf="@+id/imageFlashQuestion"
+        app:layout_constraintStart_toStartOf="@+id/imageViewFlashQuestion"
+        app:layout_constraintTop_toTopOf="@+id/imageViewFlashQuestion"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageFrashAnswer"
+        android:id="@+id/imageViewFrashAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageFlashQuestion"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewFlashQuestion"
         app:srcCompat="@drawable/image_flash_answer" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewFlashAnswer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="100dp"
         android:gravity="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageFrashAnswer"
-        app:layout_constraintEnd_toEndOf="@+id/imageFrashAnswer"
-        app:layout_constraintStart_toStartOf="@+id/imageFrashAnswer"
-        app:layout_constraintTop_toTopOf="@+id/imageFrashAnswer" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewFrashAnswer"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewFrashAnswer"
+        app:layout_constraintStart_toStartOf="@+id/imageViewFrashAnswer"
+        app:layout_constraintTop_toTopOf="@+id/imageViewFrashAnswer" />
 
     <Button
-        android:id="@+id/buttonFrash"
+        android:id="@+id/buttonNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -104,7 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonEndTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -133,5 +134,5 @@
         android:text="暗記済みにする場合はチェックを入れてください"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageFrashAnswer" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewFrashAnswer" />
 </androidx.constraintlayout.widget.ConstraintLayout>
